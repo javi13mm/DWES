@@ -1,4 +1,4 @@
-<h1 align="center"> Su título aquí </h1>
+<h1 align="center"> <u>Guía GitHub</u> </h1>
 Contiene sintaxis markdown y se usa para:
 
 * Dar una breve descripción del contenido del repositorio
