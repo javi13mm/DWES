@@ -13,7 +13,9 @@
   <img src="https://img.shields.io/badge/Javi%20Mart%C3%ADnez-8A2BE2">
 </p>
 
-Contiene sintaxis markdown y se usa para:
+:construction: Proyecto en construcción :construction:
+
+:notebook Contiene sintaxis markdown y se usa para:
 
 * Dar una breve descripción del contenido del repositorio
 * Contar cómo sacar provecho del trabajo aquí presente
