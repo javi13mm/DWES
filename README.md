@@ -1,5 +1,11 @@
 <h1 align="center"> Guía GitHub </h1>
 
+##Índice
+
+*[Título e imagen de portada](#Título-e-imagen-de-portada)
+
+*[Insignias](#insignias)
+
 <p align="center">
   <img src="https://github.com/javi13mm/DWES/assets/145338949/c84e4355-1817-4a43-9502-33a51caf4fcf"><br>
   <img src="https://img.shields.io/badge/GitHub-v._3.6-green">
