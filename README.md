@@ -1,5 +1,4 @@
-# Este es un archivo README.md
-
+<h1 align="center"> Su título aquí </h1>
 Contiene sintaxis markdown y se usa para:
 
 * Dar una breve descripción del contenido del repositorio
