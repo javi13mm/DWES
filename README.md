@@ -1,8 +1,8 @@
 ## Índice
 
-*[Título e imagen de portada](#Título-e-imagen-de-portada)
-
-*[Insignias](#insignias)
+* [Título.](#titulo)
+* [Portada](#portada)
+* [Insignias](#insignias)
 
 <h1 align="center"> Guía GitHub </h1>
 
