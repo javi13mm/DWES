@@ -1,6 +1,6 @@
 ## Índice
 
-* [Título.](#titulo)
+* [Título.](#guia_github)
 * [Portada](#portada)
 * [Insignias](#insignias)
 
