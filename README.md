@@ -1,10 +1,10 @@
 ## Índice
 
-* [Título.](#-guía-github-)
+* [Título.](#guía-github)
 * [Portada](#portada)
 * [Insignias](#insignias)
 
-<h1 align="center"> Guía GitHub </h1>
+<h1 align="center">Guía GitHub</h1>
 
 <p align="center">
   <img src="https://github.com/javi13mm/DWES/assets/145338949/c84e4355-1817-4a43-9502-33a51caf4fcf"><br>
