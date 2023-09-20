@@ -1,7 +1,6 @@
 ## Índice
 
 * [Título.](#guía-github)
-* [Texto.](#Proyecto-en-construcción)
 
 <h1 align="center">Guía GitHub</h1>
 
@@ -12,7 +11,6 @@
   <img src="https://img.shields.io/badge/Javi%20Mart%C3%ADnez-8A2BE2">
 </p>
 
-##
 :construction: Proyecto en construcción :construction:
 
 :notebook: Contiene sintaxis markdown y se usa para:
