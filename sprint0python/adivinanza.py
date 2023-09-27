@@ -1,3 +1,5 @@
+import random
+
 list_adivin = [
     [
         "Adivina adivinanza, ¿qué tiene el rey en la panza?",
@@ -21,14 +23,16 @@ list_adivin = [
         2
     ]
 ]
+list_order = [0,1,2]
 score = 0
-for i in range(3):
-    print(list_adivin[i][0]+"\n\t"+list_adivin[i][1]+"\n\t"+list_adivin[i][2]+"\n\t"+list_adivin[i][3])
+ran = random.sample(list_order,2)
+for i in range(2):
+    print(list_adivin[ran[i]][0]+"\n\t"+list_adivin[ran[i]][1]+"\n\t"+list_adivin[ran[i]][2]+"\n\t"+list_adivin[ran[i]][3])
     answer = input("\nEscriba a/b/c: ")
-    if answer == list_adivin[i][list_adivin[i][4]][0]:
+    if answer == list_adivin[ran[i]][list_adivin[ran[i]][4]][0]:
         print("\tCORRECTO!")
         score = score + 10
     else:
-        print("INCORRECTO!")
+        print("\tINCORRECTO!")
         score = score - 5
-print("Puntuación: "+str(score))
+print("Puntuación: "+str(score)+"\n")
