@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Roger Federer",
+        "description": "Roger Federer es un extenista suizo, considerado uno de los mejores de todos los tiempos. Ha sido ganador de 20 torneos de Grand Slam. Destaca por dominar todas las facetas del juego.",
+        "image_url": "https://raw.githubusercontent.com/javi13mm/DWES/main/sprint1Tkinter/catalog/data/edited/federer.jpg"
+    },
+    {
+        "name": "Rafa Nadal",
+        "description": "Rafael Nadal es un tenista español, considerado uno de los mejores de todos los tiempos. Ha sido ganador de 22 torneos de Grand Slam. Destaca por su estilo de juego defensivo.",
+        "image_url": "https://raw.githubusercontent.com/javi13mm/DWES/main/sprint1Tkinter/catalog/data/edited/nadal.jpg"
+    },
+    {
+        "name": "Novak Djokovic",
+        "description": "Novak Djokovic es un tenista serbio, considerado uno de los mejores de todos los tiempos. Ha sido ganador de 24 torneos de Grand Slam. Destaca por sus golpes desde el fondo de la pista.",
+        "image_url": "https://raw.githubusercontent.com/javi13mm/DWES/main/sprint1Tkinter/catalog/data/edited/djokovic.jpg"
+    },
+    {
+        "name": "Andy Murray",
+        "description": "Andy Murray es un tenista escocés, considerado uno de los mejores de las últimas décadas. Ha sido ganador de 3 torneos de Grand Slam. Destaca por su estilo de juego defensivo.",
+        "image_url": "https://raw.githubusercontent.com/javi13mm/DWES/main/sprint1Tkinter/catalog/data/edited/murray.jpg"
+    },
+    {
+        "name": "Serena Williams",
+        "description": "Serena Williams es una tenista estadounidense, considerada la mejor tenista femenina de toda la historia. Ha sido ganadora de 23 torneos de Grand Slam. Destaca por su gran potencia de golpeo.",
+        "image_url": "https://raw.githubusercontent.com/javi13mm/DWES/main/sprint1Tkinter/catalog/data/edited/serena.jpg"
+    }
+]
