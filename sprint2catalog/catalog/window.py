@@ -8,7 +8,7 @@ class MainWindow():
     def on_button_clicked(self, cell):
         showDetail(cell)
 
-    def __init__(self, root): # self en python es como this en java
+    def __init__(self, root, json_data): # self en python es como this en java
         root.title("MainWindow")
         self.cells = [
             Cell("Roger Federer", "C:\\msys64\\home\\Alumno\\DWES\\sprint1Tkinter\\catalog\\data\\unedited\\federer.jpg",
