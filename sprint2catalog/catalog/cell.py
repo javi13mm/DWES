@@ -1,10 +1,14 @@
 from PIL import ImageTk, Image
+from io import BytesIO
+import requests
 
 class Cell:
-    def __init__(self, title, path, desc):
-        self.title = title
-        self.path = path
+    def __init__(self, name, desc, url):
+        self.name = name
         self.desc = desc
-        img = Image.open(self.path)
-        imagen_redimensionada = img.resize((100,100),Image.Resampling.LANCZOS)
-        self.image_tk = ImageTk.PhotoImage(imagen_redimensionada)
+        self.url = url
+
+        response = requests.get(url)
+        img_data = Image.open(BytesIO(response.content))
+        self.img = ImageTk.PhotoImage(img_data)
+        

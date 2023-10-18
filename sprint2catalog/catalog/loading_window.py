@@ -5,11 +5,13 @@ import math
 from window import MainWindow
 
 class LoadingWindow:
+    json_data = []
+
     def __init__(self, root):
         self.root = root
         self.root.title("Cargando...")
         self.root.geometry("360x180")
-        self.root.resizable(True, True)
+        self.root.resizable(False, False)
 
         self.label = tk.Label(self.root, text="Cargando datos...", font=("Courier",14))
         self.label.pack(side=tk.TOP, pady=10)
@@ -27,6 +29,10 @@ class LoadingWindow:
         self.draw_progress_circle()
 
         self.update_progress_circle()
+
+        self.finish = False
+
+        self.check_thread()
 
         self.thread = threading.Thread(target=self.fetch_json_data)
         self.thread.start()
@@ -67,11 +73,17 @@ class LoadingWindow:
     def fetch_json_data(self):
         response = requests.get("https://raw.githubusercontent.com/javi13mm/DWES/main/recursos/catalog.json")
         if response.status_code == 200:
-            json_data = response.json()
-            self.root.quit()
-            launch_main_window(json_data)
+            self.json_data = response.json()
+            self.finish = True
     
+    def check_thread(self):
+        if self.finish:
+            self.root.destroy()
+            launch_main_window(self.json_data)
+        else:
+            self.root.after(100, self.check_thread)
+
 def launch_main_window(json_data):
     root = tk.Tk()
-    # app = MainWindow(root, json_data)
+    app = MainWindow(root, json_data)
     root.mainloop()
