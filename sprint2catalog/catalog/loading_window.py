@@ -88,7 +88,7 @@ class LoadingWindow:
         if response.status_code == 200:
             self.json_data = response.json()
             self.finish = True
-    
+        
     def check_thread(self):
         if self.finish:
             self.root.destroy()

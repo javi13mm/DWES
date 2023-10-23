@@ -77,7 +77,7 @@ class MainWindow():
         root.grid_rowconfigure(0, weight=1)
         root.grid_columnconfigure(0, weight=1)
 
-# función despliegue messagebox del menú
+## función despliegue messagebox del menú
 # 'event=None' es cenesario para que el atajo de teclado funcione
 def archivo_nuevo_presionado(event=None):
     message = "Este programa está desarrollado por J.M., un simple aficionado del tenis."
