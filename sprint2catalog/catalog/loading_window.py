@@ -40,7 +40,7 @@ class LoadingWindow:
 
         self.finish = False
 
-        #self.check_thread()
+        self.check_thread()
 
         self.thread = threading.Thread(target=self.fetch_json_data)
         self.thread.start()
@@ -98,5 +98,5 @@ class LoadingWindow:
 
 def launch_main_window(json_data):
     root = tk.Tk()
-    #app = MainWindow(root, json_data)
+    app = MainWindow(root, json_data)
     root.mainloop()
