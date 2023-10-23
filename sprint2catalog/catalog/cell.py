@@ -8,6 +8,7 @@ class Cell:
         self.desc = desc
         self.url = url
 
+        # imágenes accesibles desde clase Cell:
         response = requests.get(url)
         img_data = Image.open(BytesIO(response.content))
         self.img = ImageTk.PhotoImage(img_data)
