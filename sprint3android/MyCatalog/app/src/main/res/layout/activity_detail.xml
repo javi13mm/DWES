@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"
         android:text="Imagen"
-        android:textSize="40dp"
+        android:textSize="35dp"
         android:id="@+id/title"/>
     
     <com.google.android.material.imageview.ShapeableImageView
