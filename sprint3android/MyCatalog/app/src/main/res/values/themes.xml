@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.MyCatalog" parent="Base.Theme.MyCatalog" />
+
 </resources>

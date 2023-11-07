@@ -15,7 +15,6 @@ public class CatalogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_catalog);
 
         button = findViewById(R.id.buttonGoToDetail);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
