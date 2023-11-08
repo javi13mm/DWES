@@ -10,5 +10,12 @@
     <color name="pink">#F0F</color>
     <color name="turquoise">#0FF</color>
     <color name="orange">#F70</color>
-    <color name="blue2">#234</color>
+
+    <color name="blue2">#181838</color>
+    <color name="nav_header_color">#DD080828</color>
+    <color name="nav_background">#EEF</color>
+    <color name="item_not_selected">#BB080828</color>
+    <color name="item_selected">#080828</color>
+    <color name="item_selected_background">#5AAD</color>
+    <color name="burger_color">#AAD</color>
 </resources>

@@ -32,6 +32,7 @@
         app:itemBackground="@drawable/drawer_background_selector"
         app:itemIconTint="@drawable/drawer_selector"
         app:itemTextColor="@drawable/drawer_selector"
+        android:backgroundTint="@color/nav_background"
         app:menu="@menu/activity_home_navigation_drawer"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -11,8 +11,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="40dp"
-        android:text="Hola, soy J.M. y esta es mi app sobre Roger Federer. Contiene una imagen y una mera descripción de su figura como tenista."
+        android:text="Hola!\n\nSoy J.M. y esta es mi app sobre Roger Federer. Contiene una imagen y una mera descripción de su figura como tenista.\n\nEspero que te guste :)"
         android:textSize="25dp"
+        android:textColor="@color/item_not_selected"
         android:id="@+id/descripcion"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"/>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
-    android:background="@color/orange">
+    android:background="@color/nav_header_color">
 
     <TextView
         android:id="@+id/header_title"

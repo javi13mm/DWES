@@ -17,7 +17,7 @@
             android:exported="true"
             android:configChanges="orientation|screenSize">
             <!-- La línea superior sirve para que HomeActivity no se
-            reinicie cada vez que giramos la pantalla -->
+            resetee cada vez que giramos la pantalla -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -28,6 +28,11 @@
             android:exported="true"/>
         <activity
             android:name=".DetailActivity"
-            android:exported="false"/>
+            android:exported="false"
+            android:configChanges="orientation|screenSize"/>
+        <!-- La línea superior sirve para que DetailActivity no se
+            reinicie automáticamente cada vez que giramos la pantalla,
+            y así poder seguir mostrando el número de likes tras cambiar
+            la orientación -->
     </application>
 </manifest>

@@ -14,8 +14,8 @@
         android:layout_marginTop="50dp"
         android:text="Navegar al detalle"
         android:textSize="20dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/blue"
+        android:textColor="@color/nav_background"
+        android:backgroundTint="@color/blue2"
         android:id="@+id/buttonGoToDetail1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

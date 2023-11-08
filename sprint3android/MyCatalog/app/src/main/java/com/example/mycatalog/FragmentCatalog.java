@@ -31,6 +31,11 @@ public class FragmentCatalog extends Fragment {
                 // Intent y startActivity que inicializan la actividad de DetailActivity,
                 // al pulsar el botón del FragmentCatalog.
                 Intent intentDetailActivity = new Intent(context, DetailActivity.class);
+                // Enviaremos un Bundle con la variable número de likes a la DetailActivity
+                Bundle bundle = new Bundle();
+                bundle.putInt("likes",0);
+                intentDetailActivity.putExtras(bundle);
+                // Iniciamos DetailActivity con dicho Bundle
                 startActivity(intentDetailActivity);
             }
         });
