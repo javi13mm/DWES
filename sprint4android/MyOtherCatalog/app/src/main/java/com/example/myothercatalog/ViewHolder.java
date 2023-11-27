@@ -39,8 +39,11 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Al clickar el botón, se lanza la DetailActivity
+                //Al clickar el botón, se lanza la DetailActivity con los datos del tenista correspondiente asignados
                 Intent intentDetailActivity = new Intent(view.getContext(), DetailActivity.class);
+                intentDetailActivity.putExtra("name", data.getName());
+                intentDetailActivity.putExtra("description", data.getDescription());
+                intentDetailActivity.putExtra("image_url", data.getImageUrl());
                 view.getContext().startActivity(intentDetailActivity);
             }
         });
