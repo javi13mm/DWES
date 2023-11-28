@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf7a4cg2wrxf2"]
+
+[ext_resource type="PackedScene" uid="uid://dtdfie583oufd" path="res://cowboy.tscn" id="1_6h3kt"]
+[ext_resource type="Script" path="res://main.gd" id="1_kq432"]
+[ext_resource type="PackedScene" uid="uid://ce7nywveib605" path="res://floor.tscn" id="2_re37t"]
+[ext_resource type="PackedScene" uid="uid://ob1fqnvga1mn" path="res://zombie.tscn" id="3_5p27p"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kq432")
+
+[node name="Floor2" parent="." instance=ExtResource("2_re37t")]
+position = Vector2(400, 659)
+rotation = 1.5708
+
+[node name="Floor" parent="." instance=ExtResource("2_re37t")]
+position = Vector2(399, 366)
+
+[node name="Cowboy" parent="." groups=["Principal"] instance=ExtResource("1_6h3kt")]
+position = Vector2(707, 294)
+
+[node name="Zombie" parent="." instance=ExtResource("3_5p27p")]
+position = Vector2(182, 154)
+
+[node name="Zombie2" parent="." instance=ExtResource("3_5p27p")]
+position = Vector2(81, 65)
