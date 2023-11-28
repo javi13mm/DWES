@@ -1,25 +1,25 @@
 extends CharacterBody2D
 
-
-var SPEED = 170
+var SPEED = 200
 var GRAVITY = 980
 
 var direction = 0
 var last_direction = 0
 var dead = false
-var detection_distance = 400
+var detection_distance = 800
 var detected_cowboy = false
 
-var health = 3
-var goto = 0
+var health = 60
+var goto = Vector2(0,0)
 var reached_goto = false
 
 func _ready():
 	SPEED *= abs(scale.x)
 	GRAVITY *= scale.y
-	goto = position.x
+	goto = position
 
 func _physics_process(delta):
+	print(health)
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 
@@ -30,15 +30,15 @@ func _physics_process(delta):
 			if (cowboy_relative_pos.x > 10 or cowboy_relative_pos.x < -10) and cowboy_relative_pos.length() <= detection_distance:
 				$ZombieBodyAim.target_position = cowboy_relative_pos
 			if $ZombieBodyAim.is_colliding() and $ZombieBodyAim.get_collider().name.begins_with("Cowboy"):
-				goto = get_parent().find_child("Cowboy").position.x
-			if goto < position.x-50:
+				goto = get_parent().find_child("Cowboy").position
+			if goto.x < position.x-50:
 				detected_cowboy = true
 				direction = -1
 				last_direction = direction
 				reached_goto = false
 				if is_on_wall():
-					goto = position.x
-			elif goto > position.x+50:
+					goto.x = position.x
+			elif goto.x > position.x+50:
 				detected_cowboy = true
 				direction = 1
 				last_direction = direction
@@ -96,14 +96,24 @@ func place_blood(pos):
 		$Blood.position.x = 5
 
 func kicked():
-	print(true)
-	velocity.x = -250 * last_direction
+	health -= 1
+	velocity.x = -SPEED * 1.5 * last_direction
+	if health < 1:
+		$ZombieAim/ZombieArm1.hide()
+		$ZombieAim2/ZombieArm2.hide()
+		dead = true
+		if last_direction == -1:
+			$Body.play("death")
+			$Body.set_flip_h(false)
+		else:
+			$Body.play("death")
+			$Body.set_flip_h(true)
 
 func death():
-	health -= 1
+	health -= 7
 	$Blood.stop()
 	$Blood.play("blood")
-	if health == 0:
+	if health < 1:
 		$ZombieAim/ZombieArm1.hide()
 		$ZombieAim2/ZombieArm2.hide()
 		dead = true

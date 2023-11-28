@@ -272,7 +272,7 @@ script = ExtResource("3_0essd")
 
 [node name="ZombieArm1" type="AnimatedSprite2D" parent="ZombieAim"]
 position = Vector2(-6, 0)
-rotation = -1.5708
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_l4awq")
 script = ExtResource("4_s8p41")
 

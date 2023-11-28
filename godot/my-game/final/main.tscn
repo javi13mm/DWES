@@ -8,9 +8,11 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kq432")
 
+[node name="Floor3" parent="." instance=ExtResource("2_re37t")]
+position = Vector2(714, 166)
+
 [node name="Floor2" parent="." instance=ExtResource("2_re37t")]
-position = Vector2(400, 659)
-rotation = 1.5708
+position = Vector2(161, 266)
 
 [node name="Floor" parent="." instance=ExtResource("2_re37t")]
 position = Vector2(399, 366)
@@ -19,7 +21,7 @@ position = Vector2(399, 366)
 position = Vector2(707, 294)
 
 [node name="Zombie" parent="." instance=ExtResource("3_5p27p")]
-position = Vector2(182, 154)
+position = Vector2(42, 316)
 
 [node name="Zombie2" parent="." instance=ExtResource("3_5p27p")]
-position = Vector2(81, 65)
+position = Vector2(31, 196)

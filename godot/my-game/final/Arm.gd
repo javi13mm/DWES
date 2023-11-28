@@ -11,7 +11,6 @@ func _ready():
 	animation = "shooting"
 	frame = 0
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if animation == "shooting" and 2 <= frame and frame <= 4 and not emited:
@@ -25,7 +24,7 @@ func _process(delta):
 				rotation_degrees = 60
 			elif frame == 3:
 				rotation_degrees = 90
-			elif frame == 4:
+			elif frame >= 4 and frame <= 8:
 				rotation_degrees = 120
 			elif frame == 9:
 				rotation_degrees = 90
@@ -42,7 +41,7 @@ func _process(delta):
 				rotation_degrees = 120
 			elif frame == 3:
 				rotation_degrees = 90
-			elif frame == 4:
+			elif frame >= 4 and frame <= 8:
 				rotation_degrees = 60
 			elif frame == 9:
 				rotation_degrees = 90

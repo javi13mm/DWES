@@ -1,6 +1,8 @@
 res://main.tscn
-res://cowboy.gd
 res://cowboy.tscn
 res://floor.tscn
 res://zombie.tscn
-res://main.gd
+res://Zombie.gd
+res://cowboy.gd
+res://CowboyAim2.gd
+res://CowboyAim.gd

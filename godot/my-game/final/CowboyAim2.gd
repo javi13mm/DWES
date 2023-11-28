@@ -19,9 +19,10 @@ func _process(delta):
 		if finished_shot and (bullets < 1 or Input.is_action_just_pressed("reload") and bullets < 6):
 			finished_reload = false
 			$Arm2.play("reload")
+			bullets = 6
 			if not $ReloadSound2.is_playing():
 				$ReloadSound2.play()
-			emit_signal("reloading")
+				emit_signal("reloading")
 		
 		if finished_reload:
 			var angle = get_angle_to(get_local_mouse_position() + (get_parent().position) + position*get_parent().scale)*180/PI
@@ -48,7 +49,6 @@ func _on_arm_2_shot():
 
 
 func _on_arm_2_reloaded():
-	bullets = 6
 	finished_shot = true
 	finished_reload = true
 

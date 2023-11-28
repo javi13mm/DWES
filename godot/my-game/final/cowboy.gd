@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-var SPEED = 200
+var SPEED = 250
 var JUMP_VELOCITY = -370
 var GRAVITY = 980
 
 var already_kicked = true
 var direction
 
-var health = 50
+var health = 70
 var dead = false
 
 var scale_relation = 1
@@ -30,13 +30,15 @@ func _physics_process(delta):
 	if not dead:
 		direction = Input.get_axis("left", "right")
 		if is_on_floor():
-			velocity.x = move_toward(velocity.x, SPEED * direction, SPEED * 1.5 * delta)
+			velocity.x = move_toward(velocity.x, SPEED * direction, SPEED * delta)
 		else:
-			velocity.x = move_toward(velocity.x, SPEED * direction, SPEED * 0.5 * delta)
+			velocity.x = move_toward(velocity.x, SPEED * direction, SPEED * 0.6 * delta)
 		
 		if is_on_floor():
-			if (sign(direction) != sign(velocity.x)):
-				velocity.x = move_toward(velocity.x, 0, SPEED * 2.5 * delta)
+			if direction != 0 and (sign(direction) != sign(velocity.x)):
+				velocity.x = move_toward(velocity.x, 0, SPEED * 4 * delta)
+			elif direction == 0:
+				velocity.x = move_toward(velocity.x, 0, SPEED * 2 * delta)
 		else:
 			if (sign(direction) != sign(velocity.x)):
 				velocity.x = move_toward(velocity.x, 0, SPEED * 0.25 * delta)
@@ -122,7 +124,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func death():
-	print(health)
 	if health > 0:
 		health -= 1
 	if health == 0:
