@@ -1,11 +1,14 @@
-[gd_scene load_steps=40 format=3 uid="uid://ob1fqnvga1mn"]
+[gd_scene load_steps=43 format=3 uid="uid://ob1fqnvga1mn"]
 
 [ext_resource type="Script" path="res://Zombie.gd" id="1_wdtyb"]
 [ext_resource type="Texture2D" uid="uid://6syoiam5robq" path="res://sprites/zombie.png" id="2_nhoho"]
 [ext_resource type="Script" path="res://ZombieAim.gd" id="3_0essd"]
+[ext_resource type="AudioStream" uid="uid://c2ai1qdqmibyh" path="res://sounds/cowboy_footstep_sound.mp3" id="3_dmjm6"]
 [ext_resource type="Script" path="res://ZombieAim2.gd" id="4_bv7py"]
 [ext_resource type="Script" path="res://ZombieArm1.gd" id="4_s8p41"]
 [ext_resource type="Script" path="res://ZombieArm2.gd" id="6_xadfd"]
+[ext_resource type="AudioStream" uid="uid://bnkhsqsdvqp6i" path="res://sounds/zombie_growl_sound.mp3" id="7_qq5gi"]
+[ext_resource type="AudioStream" uid="uid://b7jjl1wha50am" path="res://sounds/zombie_roar_sound.mp3" id="8_vsn7c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hr52l"]
 atlas = ExtResource("2_nhoho")
@@ -260,6 +263,9 @@ collision_mask = 3
 sprite_frames = SubResource("SpriteFrames_ibghy")
 animation = &"run"
 
+[node name="FootstepSound" type="AudioStreamPlayer2D" parent="Body"]
+stream = ExtResource("3_dmjm6")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_pyd2s")
@@ -296,3 +302,9 @@ animation = &"blood"
 frame = 9
 frame_progress = 1.0
 offset = Vector2(0, 1)
+
+[node name="ZombieDeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_qq5gi")
+
+[node name="ZombieRoarSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_vsn7c")

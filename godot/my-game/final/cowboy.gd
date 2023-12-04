@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 250
 var JUMP_VELOCITY = -370
-var GRAVITY = 980
+var GRAVITY = 950
 
 var already_kicked = true
 var direction
@@ -25,6 +25,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	if $HurtTimer.is_stopped():
+		$HurtSound.stop()
 # FÍSICAS
 	velocity.y += GRAVITY * delta
 	if not dead:
@@ -126,7 +128,14 @@ func _physics_process(delta):
 func death():
 	if health > 0:
 		health -= 1
+		if not $HurtSound.is_playing():
+			#var secs = randi_range()
+			var secs = 1.0 + 2.5 * randi_range(0, 6)
+			$HurtSound.play(secs)
+			$HurtTimer.start()
 	if health == 0:
+		$HurtSound.stop()
+		$DeathSound.play()
 		$Body.play("death")
 		$CowboyAim/Arm.hide()
 		$CowboyAim2/Arm2.hide()

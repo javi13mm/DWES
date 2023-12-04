@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dtdfie583oufd"]
+[gd_scene load_steps=53 format=3 uid="uid://dtdfie583oufd"]
 
 [ext_resource type="Script" path="res://cowboy.gd" id="1_a8niy"]
 [ext_resource type="Texture2D" uid="uid://pb35ft8kph0e" path="res://sprites/cowboy.png" id="1_agke4"]
@@ -6,10 +6,13 @@
 [ext_resource type="Script" path="res://Body.gd" id="3_t5qod"]
 [ext_resource type="Texture2D" uid="uid://cjaw1h1afb2rf" path="res://sprites/pointer.png" id="4_4t7se"]
 [ext_resource type="Script" path="res://Arm.gd" id="4_m521w"]
+[ext_resource type="AudioStream" uid="uid://c2ai1qdqmibyh" path="res://sounds/cowboy_footstep_sound.mp3" id="4_q8saw"]
 [ext_resource type="Script" path="res://CowboyAim2.gd" id="5_lducm"]
 [ext_resource type="AudioStream" uid="uid://cg7waoccrfmok" path="res://sounds/shot_sound.mp3" id="7_nlk6c"]
 [ext_resource type="Script" path="res://Arm2.gd" id="7_qdcwj"]
 [ext_resource type="AudioStream" uid="uid://dtm2e4v6xgfcn" path="res://sounds/reload_sound.mp3" id="8_kjs6b"]
+[ext_resource type="AudioStream" uid="uid://cnjf7scr3rcl0" path="res://sounds/cowboy_hurt_sound.mp3" id="11_4tqfu"]
+[ext_resource type="AudioStream" uid="uid://b0ptqq3oilpvu" path="res://sounds/cowboy_death_sound.mp3" id="12_f3j2u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk5d0"]
 atlas = ExtResource("1_agke4")
@@ -377,15 +380,22 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_a8niy")
 
+[node name="Camera" type="Camera2D" parent="."]
+limit_left = -1000000
+
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uflpw")
-animation = &"kick"
+animation = &"run"
 script = ExtResource("3_t5qod")
 
 [node name="KickAim" type="RayCast2D" parent="Body"]
 position = Vector2(0, 5)
-target_position = Vector2(20, 0)
+target_position = Vector2(25, 0)
 collision_mask = 5
+
+[node name="FootstepSound" type="AudioStreamPlayer2D" parent="Body"]
+stream = ExtResource("4_q8saw")
+volume_db = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
@@ -413,9 +423,11 @@ texture = ExtResource("4_4t7se")
 
 [node name="ShotSound" type="AudioStreamPlayer2D" parent="CowboyAim"]
 stream = ExtResource("7_nlk6c")
+volume_db = 6.0
 
 [node name="ReloadSound" type="AudioStreamPlayer2D" parent="CowboyAim"]
 stream = ExtResource("8_kjs6b")
+volume_db = 5.0
 
 [node name="CowboyAim2" type="RayCast2D" parent="."]
 show_behind_parent = true
@@ -432,9 +444,22 @@ script = ExtResource("7_qdcwj")
 
 [node name="ShotSound2" type="AudioStreamPlayer2D" parent="CowboyAim2"]
 stream = ExtResource("7_nlk6c")
+volume_db = 6.0
 
 [node name="ReloadSound2" type="AudioStreamPlayer2D" parent="CowboyAim2"]
 stream = ExtResource("8_kjs6b")
+volume_db = 5.0
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_4tqfu")
+volume_db = 4.0
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_f3j2u")
+
+[node name="HurtTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 
 [connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]
 [connection signal="reloading" from="CowboyAim" to="CowboyAim2" method="_on_cowboy_aim_reloading"]

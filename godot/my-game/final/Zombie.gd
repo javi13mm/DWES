@@ -9,7 +9,7 @@ var dead = false
 var detection_distance = 800
 var detected_cowboy = false
 
-var health = 60
+var health = 50
 var goto = Vector2(0,0)
 var reached_goto = false
 
@@ -19,11 +19,16 @@ func _ready():
 	goto = position
 
 func _physics_process(delta):
-	print(health)
+	if $Body.animation == "run" and ($Body.frame == 4 or $Body.frame == 9) and not $Body/FootstepSound.is_playing():
+		$Body/FootstepSound.play()
+	
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 
 	if not dead:
+		if not reached_goto and not $ZombieRoarSound.playing:
+			$ZombieRoarSound.play(1.0)
+		
 		var cowboy_relative_pos = 0
 		if get_parent().find_child("Cowboy"):
 			cowboy_relative_pos = get_parent().find_child("Cowboy").position - position
@@ -80,7 +85,8 @@ func _physics_process(delta):
 			$Body.play("stand")
 			velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+		$ZombieRoarSound.stop()
+		velocity.x = move_toward(velocity.x, 0, SPEED * 1.5 * delta)
 		set_collision_layer_value(3, false)
 		set_collision_mask_value(2, false)
 	
@@ -114,6 +120,7 @@ func death():
 	$Blood.stop()
 	$Blood.play("blood")
 	if health < 1:
+		$ZombieDeathSound.play()
 		$ZombieAim/ZombieArm1.hide()
 		$ZombieAim2/ZombieArm2.hide()
 		dead = true
