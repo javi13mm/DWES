@@ -12,6 +12,7 @@ func _process(delta):
 	if not get_parent().dead:
 		if get_parent().get_parent():
 			var cowboy_pos = get_parent().goto
+			print(str(cowboy_pos - get_parent().position))
 			target_position = cowboy_pos - get_parent().position
 			if target_position.x > 25:
 				target_position.x = 25

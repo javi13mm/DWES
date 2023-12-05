@@ -1,23 +1,25 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701685712
+::res://::1701773676
 Arm1.gd::GDScript::-1::1701202034::0::1::::<>AnimatedSprite2D<>::
 Arm2.gd::GDScript::-1::1701202034::0::1::::<>AnimatedSprite2D<>::
 Arm.gd::GDScript::-1::1701202034::0::1::::<>AnimatedSprite2D<>::
-Body.gd::GDScript::-1::1701521712::0::1::::<>AnimatedSprite2D<>::
-cowboy.gd::GDScript::-1::1701286573::0::1::::<>CharacterBody2D<>::
-cowboy.tscn::PackedScene::8499361342754062285::1701522026::0::1::::<><>::res://cowboy.gd<>uid://pb35ft8kph0e::::res://sprites/cowboy.png<>res://CowboyAim.gd<>res://Body.gd<>uid://cjaw1h1afb2rf::::res://sprites/pointer.png<>res://Arm.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://CowboyAim2.gd<>uid://cg7waoccrfmok::::res://sounds/shot_sound.mp3<>res://Arm2.gd<>uid://dtm2e4v6xgfcn::::res://sounds/reload_sound.mp3<>uid://cnjf7scr3rcl0::::res://sounds/cowboy_hurt_sound.mp3<>uid://b0ptqq3oilpvu::::res://sounds/cowboy_death_sound.mp3
-CowboyAim2.gd::GDScript::-1::1701202035::0::1::::<>RayCast2D<>::
-CowboyAim.gd::GDScript::-1::1701202034::0::1::::<>RayCast2D<>::
-floor.tscn::PackedScene::5120490198175030324::1701521971::0::1::::<><>::
+Body.gd::GDScript::-1::1701769981::0::1::::<>AnimatedSprite2D<>::
+cowboy.gd::GDScript::-1::1701771216::0::1::::<>CharacterBody2D<>::
+cowboy.tscn::PackedScene::8499361342754062285::1701773569::0::1::::<><>::res://cowboy.gd<>uid://pb35ft8kph0e::::res://sprites/cowboy.png<>res://CowboyAim.gd<>res://Body.gd<>uid://cjaw1h1afb2rf::::res://sprites/pointer.png<>res://Arm.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://CowboyAim2.gd<>uid://cg7waoccrfmok::::res://sounds/shot_sound.mp3<>res://Arm2.gd<>uid://dtm2e4v6xgfcn::::res://sounds/reload_sound.mp3<>uid://cnjf7scr3rcl0::::res://sounds/cowboy_hurt_sound.mp3<>uid://b0ptqq3oilpvu::::res://sounds/cowboy_death_sound.mp3
+CowboyAim2.gd::GDScript::-1::1701771340::0::1::::<>RayCast2D<>::
+CowboyAim.gd::GDScript::-1::1701771340::0::1::::<>RayCast2D<>::
+floor.tscn::PackedScene::5120490198175030324::1701773569::0::1::::<><>::
 icon.svg::CompressedTexture2D::6030231349834151962::1701202035::1701202035::1::::<><>::
+Level1.tscn::PackedScene::2803476893608795369::1701773688::0::1::::<><>::res://main.gd<>uid://dtdfie583oufd::::res://cowboy.tscn<>uid://ob1fqnvga1mn::::res://zombie.tscn<>uid://dc0l3lkersyap::::res://map/Terrain (16x16).png
 main.gd::GDScript::-1::1701202035::0::1::::<>Node2D<>::
-main.tscn::PackedScene::2803476893608795369::1701521970::0::1::::<><>::uid://dtdfie583oufd::::res://cowboy.tscn<>res://main.gd<>uid://ce7nywveib605::::res://floor.tscn<>uid://ob1fqnvga1mn::::res://zombie.tscn
-Zombie.gd::GDScript::-1::1701287710::0::1::::<>CharacterBody2D<>::
-zombie.tscn::PackedScene::986296620886217805::1701521971::0::1::::<><>::res://Zombie.gd<>uid://6syoiam5robq::::res://sprites/zombie.png<>res://ZombieAim.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://ZombieAim2.gd<>res://ZombieArm1.gd<>res://ZombieArm2.gd<>uid://bnkhsqsdvqp6i::::res://sounds/zombie_growl_sound.mp3<>uid://b7jjl1wha50am::::res://sounds/zombie_roar_sound.mp3
+Zombie.gd::GDScript::-1::1701771442::0::1::::<>CharacterBody2D<>::
+zombie.tscn::PackedScene::986296620886217805::1701773569::0::1::::<><>::res://Zombie.gd<>uid://6syoiam5robq::::res://sprites/zombie.png<>res://ZombieAim.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://ZombieAim2.gd<>res://ZombieArm1.gd<>res://ZombieArm2.gd<>uid://bnkhsqsdvqp6i::::res://sounds/zombie_growl_sound.mp3<>uid://b7jjl1wha50am::::res://sounds/zombie_roar_sound.mp3
 ZombieAim2.gd::GDScript::-1::1701202035::0::1::::<>RayCast2D<>::
 ZombieAim.gd::GDScript::-1::1701202035::0::1::::<>RayCast2D<>::
 ZombieArm1.gd::GDScript::-1::1701202035::0::1::::<>AnimatedSprite2D<>::
 ZombieArm2.gd::GDScript::-1::1701202035::0::1::::<>AnimatedSprite2D<>::
+::res://map/::1701772371
+Terrain (16x16).png::CompressedTexture2D::7351967664766720911::1701110601::1701772371::1::::<><>::
 ::res://sounds/::1701685659
 cowboy_death_sound.mp3::AudioStreamMP3::4173290520795211442::1701286460::1701286498::1::::<><>::
 cowboy_footstep_sound.mp3::AudioStreamMP3::6668473157948070267::1701287156::1701287200::1::::<><>::

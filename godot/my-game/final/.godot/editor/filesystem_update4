@@ -3,3 +3,9 @@ res://Body.gd
 res://cowboy.tscn
 res://floor.tscn
 res://zombie.tscn
+res://CowboyAim2.gd
+res://CowboyAim.gd
+res://Zombie.gd
+res://cowboy.gd
+res://Level1.tscn
+res://ZombieAim.gd

@@ -155,7 +155,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pyd2s"]
-size = Vector2(5, 42)
+size = Vector2(7, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysewb"]
 atlas = ExtResource("2_nhoho")

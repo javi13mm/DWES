@@ -40,7 +40,7 @@ func _process(delta):
 				finished_shot = false
 				if is_colliding() and get_collider().name.begins_with("Zombie"):
 					var placement = (get_collision_point() - get_collider().position)/get_parent().scale
-					get_collider().place_blood(placement)
+					get_collider().place_blood(placement, get_parent().position.x)
 					get_collider().death()
 
 func _on_arm_2_shot_already():

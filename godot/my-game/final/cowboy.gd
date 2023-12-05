@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 var SPEED = 250
-var JUMP_VELOCITY = -370
+var JUMP_VELOCITY = -400
 var GRAVITY = 950
 
 var already_kicked = true
 var direction
 
-var health = 70
+var health = 1000
 var dead = false
 
 var scale_relation = 1

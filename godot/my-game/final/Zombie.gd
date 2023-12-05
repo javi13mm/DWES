@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 var SPEED = 200
-var GRAVITY = 980
+var GRAVITY = 950
 
 var direction = 0
 var last_direction = 0
 var dead = false
-var detection_distance = 800
+var detection_distance = 600
 var detected_cowboy = false
 
 var health = 50
@@ -49,7 +49,7 @@ func _physics_process(delta):
 				last_direction = direction
 				reached_goto = false
 				if is_on_wall():
-					goto = position.x
+					goto.x = position.x
 			else:
 				detected_cowboy = false
 				direction = 0
@@ -92,9 +92,9 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-func place_blood(pos):
-	$Blood.position.y = pos.y
-	if pos.x > 0:
+func place_blood(collision_pos, cowboy_pos):
+	$Blood.position.y = collision_pos.y
+	if cowboy_pos > position.x:
 		$Blood.set_flip_h(false)
 		$Blood.position.x = -5
 	else:
