@@ -14,6 +14,7 @@ var goto = Vector2(0,0)
 var reached_goto = false
 
 func _ready():
+	scale = Vector2(1.5,1.5)
 	SPEED *= abs(scale.x)
 	GRAVITY *= scale.y
 	goto = position

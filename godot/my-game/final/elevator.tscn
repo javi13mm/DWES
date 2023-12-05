@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://rs560cwqioqo"]
+
+[ext_resource type="Texture2D" uid="uid://b3cj4tv57xgdm" path="res://sprites/elevator.png" id="1_ep4ug"]
+[ext_resource type="Texture2D" uid="uid://crdwvrso0c2wc" path="res://sprites/elevator2.png" id="3_fnrul"]
+[ext_resource type="Script" path="res://Interruptor.gd" id="3_qb2ak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfat0"]
+size = Vector2(128, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgpo1"]
+size = Vector2(8, 32)
+
+[node name="Elevator" type="AnimatableBody2D"]
+collision_mask = 0
+
+[node name="ElevatorStop" type="Sprite2D" parent="."]
+position = Vector2(0, -10.5)
+texture = ExtResource("1_ep4ug")
+
+[node name="ElevatorMoving" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -10.5)
+texture = ExtResource("3_fnrul")
+
+[node name="CollisionShapeElevator" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pfat0")
+one_way_collision = true
+
+[node name="Interruptor" type="AnimatableBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("3_qb2ak")
+
+[node name="CollisionShapeInterruptor" type="CollisionShape2D" parent="Interruptor"]
+position = Vector2(0, -19)
+shape = SubResource("RectangleShape2D_bgpo1")

@@ -16,12 +16,11 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Body.play("stand")
 	
-	if get_parent():
-		scale_relation = abs(get_parent().relation())
+	scale = Vector2(1.5,1.5)
 	
-	SPEED *= scale_relation
-	JUMP_VELOCITY *= scale_relation
-	GRAVITY *= scale_relation
+	SPEED *= scale.x
+	JUMP_VELOCITY *= scale.x
+	GRAVITY *= scale.x
 
 
 func _physics_process(delta):

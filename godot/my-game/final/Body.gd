@@ -12,5 +12,7 @@ func _process(delta):
 		if get_parent().get_parent():
 			if  $KickAim.is_colliding() and $KickAim.get_collider().name.begins_with("Zombie"):
 				$KickAim.get_collider().kicked()
+			elif $KickAim.is_colliding() and $KickAim.get_collider().name.begins_with("Interruptor"):
+				$KickAim.get_collider().kicked()
 	elif animation == "run" and (frame == 4 or frame == 9) and not $FootstepSound.is_playing():
 		$FootstepSound.play()
