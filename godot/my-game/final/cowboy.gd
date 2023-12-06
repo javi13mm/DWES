@@ -7,7 +7,8 @@ var GRAVITY = 950
 var already_kicked = true
 var direction
 
-var health = 1000
+var health = 100
+var kick_power_up = false
 var dead = false
 
 var scale_relation = 1
@@ -143,3 +144,11 @@ func death():
 func _on_body_animation_finished():
 	if $Body.animation == "kick":
 		already_kicked = true
+
+func heart():
+	health += 100
+	$HeartSound.play()
+
+func kick_power():
+	$KickPowerUpSound.play()
+	kick_power_up = true

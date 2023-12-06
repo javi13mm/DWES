@@ -14,6 +14,7 @@ var goto = Vector2(0,0)
 var reached_goto = false
 
 func _ready():
+	$ZombieRoarSound.pitch_scale = randf_range(0.9, 1.3)
 	scale = Vector2(1.5,1.5)
 	SPEED *= abs(scale.x)
 	GRAVITY *= scale.y
@@ -90,6 +91,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED * 1.5 * delta)
 		set_collision_layer_value(3, false)
 		set_collision_mask_value(2, false)
+		if $DeathTimer.is_stopped():
+			queue_free()
 	
 	move_and_slide()
 
@@ -102,10 +105,14 @@ func place_blood(collision_pos, cowboy_pos):
 		$Blood.set_flip_h(true)
 		$Blood.position.x = 5
 
-func kicked():
-	health -= 1
+func kicked(power_up):
+	if power_up:
+		health -= 20
+	else:
+		health -= 1
 	velocity.x = -SPEED * 1.5 * last_direction
 	if health < 1:
+		$DeathTimer.start()
 		$ZombieAim/ZombieArm1.hide()
 		$ZombieAim2/ZombieArm2.hide()
 		dead = true
@@ -121,6 +128,7 @@ func death():
 	$Blood.stop()
 	$Blood.play("blood")
 	if health < 1:
+		$DeathTimer.start()
 		$ZombieDeathSound.play()
 		$ZombieAim/ZombieArm1.hide()
 		$ZombieAim2/ZombieArm2.hide()

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://84g20pqblilr"]
+
+[ext_resource type="Script" path="res://KickPowerUp.gd" id="1_3m5ln"]
+[ext_resource type="Texture2D" uid="uid://c7gihtetobist" path="res://sprites/kick_power_up.png" id="2_vgub2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t6uq"]
+size = Vector2(22, 20)
+
+[node name="KickPowerUp" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_3m5ln")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vgub2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3t6uq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

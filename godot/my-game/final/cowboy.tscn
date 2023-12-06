@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dtdfie583oufd"]
+[gd_scene load_steps=55 format=3 uid="uid://dtdfie583oufd"]
 
 [ext_resource type="Script" path="res://cowboy.gd" id="1_a8niy"]
 [ext_resource type="Texture2D" uid="uid://pb35ft8kph0e" path="res://sprites/cowboy.png" id="1_agke4"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://dtm2e4v6xgfcn" path="res://sounds/reload_sound.mp3" id="8_kjs6b"]
 [ext_resource type="AudioStream" uid="uid://cnjf7scr3rcl0" path="res://sounds/cowboy_hurt_sound.mp3" id="11_4tqfu"]
 [ext_resource type="AudioStream" uid="uid://b0ptqq3oilpvu" path="res://sounds/cowboy_death_sound.mp3" id="12_f3j2u"]
+[ext_resource type="AudioStream" uid="uid://bjxl1p7gscah" path="res://sounds/heart_sound.mp3" id="14_xewoq"]
+[ext_resource type="AudioStream" uid="uid://bjhle162nbs8c" path="res://sounds/power_up_sound.mp3" id="15_icq5v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk5d0"]
 atlas = ExtResource("1_agke4")
@@ -377,15 +379,14 @@ animations = [{
 
 [node name="Cowboy" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 21
 script = ExtResource("1_a8niy")
 
 [node name="Camera" type="Camera2D" parent="."]
-offset = Vector2(0, -50)
 limit_left = 0
 limit_top = 0
-limit_right = 10000
-limit_bottom = 2000
+limit_right = 3824
+limit_bottom = 1952
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uflpw")
@@ -395,7 +396,7 @@ script = ExtResource("3_t5qod")
 [node name="KickAim" type="RayCast2D" parent="Body"]
 position = Vector2(0, 5)
 target_position = Vector2(25, 0)
-collision_mask = 13
+collision_mask = 44
 
 [node name="FootstepSound" type="AudioStreamPlayer2D" parent="Body"]
 stream = ExtResource("4_q8saw")
@@ -464,6 +465,12 @@ stream = ExtResource("12_f3j2u")
 [node name="HurtTimer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="HeartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_xewoq")
+
+[node name="KickPowerUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_icq5v")
 
 [connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]
 [connection signal="reloading" from="CowboyAim" to="CowboyAim2" method="_on_cowboy_aim_reloading"]

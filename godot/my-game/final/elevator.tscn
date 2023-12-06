@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://rs560cwqioqo"]
+[gd_scene load_steps=7 format=3 uid="uid://rs560cwqioqo"]
 
 [ext_resource type="Texture2D" uid="uid://b3cj4tv57xgdm" path="res://sprites/elevator.png" id="1_ep4ug"]
 [ext_resource type="Texture2D" uid="uid://crdwvrso0c2wc" path="res://sprites/elevator2.png" id="3_fnrul"]
 [ext_resource type="Script" path="res://Interruptor.gd" id="3_qb2ak"]
+[ext_resource type="AudioStream" uid="uid://d352b8ptn2cxr" path="res://sounds/interruptor_sound.mp3" id="4_ham1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfat0"]
 size = Vector2(128, 5)
@@ -34,3 +35,7 @@ script = ExtResource("3_qb2ak")
 [node name="CollisionShapeInterruptor" type="CollisionShape2D" parent="Interruptor"]
 position = Vector2(0, -19)
 shape = SubResource("RectangleShape2D_bgpo1")
+
+[node name="InterruptorSound" type="AudioStreamPlayer2D" parent="Interruptor"]
+stream = ExtResource("4_ham1x")
+volume_db = 2.0

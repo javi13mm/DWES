@@ -23,8 +23,8 @@ func _process(delta):
 				kick = false
 				get_parent().get_child(1).hide()
 			else:
-				get_parent().position.y -= speed
-				position.y -= speed
+				get_parent().position.y = move_toward(get_parent().position.y, up_limit, speed)
+				position.y -= move_toward(position.y, up_limit, speed)
 				get_parent().get_child(1).show()
 		else:
 			if get_parent().position.y >= down_limit:
@@ -32,10 +32,11 @@ func _process(delta):
 				kick = false
 				get_parent().get_child(1).hide()
 			else:
-				get_parent().position.y += speed
-				position.y += speed
+				get_parent().position.y = move_toward(get_parent().position.y, down_limit, speed)
+				position.y = move_toward(position.y, up_limit, speed)
 				get_parent().get_child(1).show()
 
 func kicked():
 	if not kick:
 		kick = true
+		$InterruptorSound.play()

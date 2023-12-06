@@ -308,3 +308,7 @@ stream = ExtResource("7_qq5gi")
 
 [node name="ZombieRoarSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_vsn7c")
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true

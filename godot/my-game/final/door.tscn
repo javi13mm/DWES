@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxunnmjfp2hna"]
+
+[ext_resource type="Script" path="res://Door.gd" id="1_iaxrg"]
+[ext_resource type="Texture2D" uid="uid://biblslsrfa2o0" path="res://sprites/door_close.png" id="2_4yine"]
+[ext_resource type="Texture2D" uid="uid://das1uk0xo61m" path="res://sprites/door_open.png" id="3_0m7t7"]
+[ext_resource type="AudioStream" uid="uid://r0wntlvw1tnu" path="res://sounds/door_open_sound.mp3" id="4_6g3kk"]
+[ext_resource type="AudioStream" uid="uid://ca4i4ua8d2nd" path="res://sounds/door_close_sound.mp3" id="5_r2vpb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1dxs"]
+size = Vector2(16, 78)
+
+[node name="Door" type="AnimatableBody2D"]
+collision_layer = 33
+collision_mask = 0
+script = ExtResource("1_iaxrg")
+
+[node name="Closed" type="Sprite2D" parent="."]
+texture = ExtResource("2_4yine")
+
+[node name="Opened" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_0m7t7")
+
+[node name="CollisionShapeDoor" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_q1dxs")
+
+[node name="DoorOpenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6g3kk")
+
+[node name="DoorCloseSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_r2vpb")
+
+[node name="OpenOrCloseTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
