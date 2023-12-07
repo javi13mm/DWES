@@ -9,7 +9,7 @@ var dead = false
 var detection_distance = 600
 var detected_cowboy = false
 
-var health = 50
+var health = 40
 var goto = Vector2(0,0)
 var reached_goto = false
 
@@ -113,6 +113,7 @@ func kicked(power_up):
 	velocity.x = -SPEED * 1.5 * last_direction
 	if health < 1:
 		$DeathTimer.start()
+		$ZombieDeathSound.play()
 		$ZombieAim/ZombieArm1.hide()
 		$ZombieAim2/ZombieArm2.hide()
 		dead = true

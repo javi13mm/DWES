@@ -378,15 +378,11 @@ animations = [{
 }]
 
 [node name="Cowboy" type="CharacterBody2D"]
+position = Vector2(535, 405)
 collision_layer = 2
 collision_mask = 21
 script = ExtResource("1_a8niy")
-
-[node name="Camera" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-limit_right = 3824
-limit_bottom = 1952
+metadata/_edit_group_ = true
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uflpw")

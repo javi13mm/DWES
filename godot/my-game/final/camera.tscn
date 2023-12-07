@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq0qgh6phjcmt"]
+
+[ext_resource type="Script" path="res://camera.gd" id="1_ktalr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7r7ns"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_p8pxq"]
+
+[node name="Camera" type="Camera2D"]
+limit_left = 0
+limit_top = 0
+limit_right = 3824
+limit_bottom = 1952
+script = ExtResource("1_ktalr")
+
+[node name="BackgroundBar" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.784314)
+scale = Vector2(244, 48)
+texture = SubResource("CanvasTexture_7r7ns")
+centered = false
+
+[node name="HealthBar" type="Sprite2D" parent="."]
+modulate = Color(0, 0.784314, 0, 0.784314)
+position = Vector2(3, 3)
+scale = Vector2(238, 42)
+texture = SubResource("CanvasTexture_p8pxq")
+centered = false

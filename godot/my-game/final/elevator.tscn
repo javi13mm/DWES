@@ -6,13 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://d352b8ptn2cxr" path="res://sounds/interruptor_sound.mp3" id="4_ham1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfat0"]
-size = Vector2(128, 5)
+size = Vector2(128, 4.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgpo1"]
 size = Vector2(8, 32)
 
 [node name="Elevator" type="AnimatableBody2D"]
-collision_mask = 0
+collision_mask = 6
+collision_priority = 10.0
 
 [node name="ElevatorStop" type="Sprite2D" parent="."]
 position = Vector2(0, -10.5)
@@ -24,6 +25,7 @@ position = Vector2(0, -10.5)
 texture = ExtResource("3_fnrul")
 
 [node name="CollisionShapeElevator" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_pfat0")
 one_way_collision = true
 
