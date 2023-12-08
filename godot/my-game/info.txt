@@ -1,0 +1,28 @@
+Información previa:
+
+El nombre de la carpeta del juego Godot es la llamada "final/".
+
+Los controles no son cambiables en el juego. Son los siguientes:
+
+   (función) -> (botón recomendado)
+      "left" -> A
+     "right" -> D
+      "jump" -> SpaceBar
+"mouse_left" -> MouseLeftButton
+      "kick" -> MouseRightButton
+    "reload" -> R
+
+Para moverse por los menús y presionar botones: flechas del teclado y SpaceBar o Enter,
+respectivamente.
+
+Recomendable: leer el apartado "TIPS", del menú principal antes de jugar.
+
+Los ajustes de opciones se guardan en un archivo JSON en la carpeta "final/save/".
+En dicha carpeta se almacena también los datos del nickname del jugador y su score.
+
+El nickname se introduce antes de comenzar el nivel 1, luego el score se va actualizando
+al final de cada nivel, hasta terminar el juego y subir el mismo al API REST. Si mueres
+por el camino, no se subirá la puntuación.
+
+La puntuación es mayor si se juega en dificultad difícil (mayor velocidad y menor vida,
+de los enemigos).
