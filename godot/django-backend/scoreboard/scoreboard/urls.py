@@ -19,4 +19,5 @@ from rest_app import endpoints
 
 urlpatterns = [
     path('score', endpoints.score),
+    path('scorecza', endpoints.score_cza),
 ]

@@ -557,7 +557,7 @@ scale = Vector2(1, -1)
 position = Vector2(1920, 1490)
 
 [node name="Cowboy" parent="." instance=ExtResource("2_a0eue")]
-position = Vector2(3523, 222)
+position = Vector2(172, 1545)
 
 [node name="Zombie" parent="." instance=ExtResource("3_5k0r2")]
 position = Vector2(1171, 1822)

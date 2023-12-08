@@ -4,7 +4,6 @@ var file_dir = "save/settings.json"
 var difficulty = 0
 var volume = 10
 
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
@@ -18,6 +17,7 @@ func _ready():
 	$DifficultyContainer.hide()
 	$BackButton2.hide()
 	$Tips.hide()
+	$Leaderboards.hide()
 
 func read_initial_settings():
 	var file = FileAccess.open(file_dir, 1)
@@ -111,7 +111,35 @@ func _on_tips_button_pressed():
 
 
 func _on_back_button_2_pressed():
+	$Leaderboards.text = "Cargando..."
+	$Leaderboards.hide()
 	$BackButton2.hide()
 	$Tips.hide()
 	$VBoxContainer.show()
 	$VBoxContainer/TipsButton.grab_focus()
+
+
+func _on_leaderboards_button_pressed():
+	$VBoxContainer.hide()
+	send_get_score()
+	$Leaderboards.show()
+	$BackButton2.show()
+	$BackButton2.grab_focus()
+
+func send_get_score():
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.request_completed
+	http_request.connect("request_completed",_on_server_has_responded)
+	http_request.request("http://127.0.0.1:8000/scorecza",
+						PackedStringArray(["Content-Type: application/json", "Client-Secret: abc"]),
+						HTTPClient.METHOD_GET)
+
+func _on_server_has_responded(result, response_code, headers, body):
+	var response = JSON.parse_string(body.get_string_from_utf8())
+	var content = ""
+	var pos = 0
+	for record in response:
+		pos += 1
+		content += str(pos)+". Nick: "+str(record.get("username"))+"\n    Score: "+str(record.get("score"))+"\n\n"
+	$Leaderboards.text = "TOP 5:\n"+content

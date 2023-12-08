@@ -541,7 +541,7 @@ scale = Vector2(1, -1)
 position = Vector2(3680, 1595)
 
 [node name="Cowboy" parent="." instance=ExtResource("6_0wemu")]
-position = Vector2(3646, 104)
+position = Vector2(430, 1503)
 
 [node name="KickPowerUp" parent="." instance=ExtResource("8_l71c2")]
 position = Vector2(674, 38)

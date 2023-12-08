@@ -54,6 +54,10 @@ text = "OPTIONS"
 layout_mode = 2
 text = "TIPS"
 
+[node name="LeaderboardsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "LEADERBOARDS"
+
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../PlayButton")
@@ -184,6 +188,22 @@ apenas hará daño a los Zombies con su patada. Aún así, esta es útil para em
 Zombies cercanos y sacárselos de encima, úsala!"
 label_settings = SubResource("LabelSettings_cxhla")
 
+[node name="Leaderboards" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cargando..."
+label_settings = SubResource("LabelSettings_cxhla")
+
 [node name="BackButton2" type="Button" parent="."]
 visible = false
 layout_mode = 1
@@ -205,6 +225,7 @@ text = "BACK"
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TipsButton" to="." method="_on_tips_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LeaderboardsButton" to="." method="_on_leaderboards_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Options/OptionsGrid/DifficultyChosen" to="." method="_on_difficulty_chosen_pressed"]
 [connection signal="value_changed" from="Options/OptionsGrid/VolumeScrollBar" to="." method="_on_volume_scroll_bar_value_changed"]
