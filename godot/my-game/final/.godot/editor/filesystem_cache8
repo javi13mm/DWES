@@ -1,35 +1,43 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702044596
+::res://::1702065895
 Arm1.gd::GDScript::-1::1701202034::0::1::::<>AnimatedSprite2D<>::
 Arm2.gd::GDScript::-1::1701202034::0::1::::<>AnimatedSprite2D<>::
 Arm.gd::GDScript::-1::1701202034::0::1::::<>AnimatedSprite2D<>::
-Body.gd::GDScript::-1::1701990910::0::1::::<>AnimatedSprite2D<>::
+Body.gd::GDScript::-1::1702045255::0::1::::<>AnimatedSprite2D<>::
 camera.gd::GDScript::-1::1702000853::0::1::::<>Camera2D<>::
 camera.tscn::PackedScene::5948454912337537547::1701975837::0::1::::<><>::res://camera.gd
-cowboy.gd::GDScript::-1::1701998844::0::1::::<>CharacterBody2D<>::
-cowboy.tscn::PackedScene::8499361342754062285::1702006927::0::1::::<><>::res://cowboy.gd<>uid://pb35ft8kph0e::::res://sprites/cowboy.png<>res://CowboyAim.gd<>res://Body.gd<>uid://cjaw1h1afb2rf::::res://sprites/pointer.png<>res://Arm.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://CowboyAim2.gd<>uid://cg7waoccrfmok::::res://sounds/shot_sound.mp3<>res://Arm2.gd<>uid://dtm2e4v6xgfcn::::res://sounds/reload_sound.mp3<>uid://cnjf7scr3rcl0::::res://sounds/cowboy_hurt_sound.mp3<>uid://b0ptqq3oilpvu::::res://sounds/cowboy_death_sound.mp3<>uid://bjxl1p7gscah::::res://sounds/heart_sound.mp3<>uid://bjhle162nbs8c::::res://sounds/power_up_sound.mp3
+cowboy.gd::GDScript::-1::1702049909::0::1::::<>CharacterBody2D<>::
+cowboy.tscn::PackedScene::8499361342754062285::1702049909::0::1::::<><>::res://cowboy.gd<>uid://pb35ft8kph0e::::res://sprites/cowboy.png<>res://CowboyAim.gd<>res://Body.gd<>uid://cjaw1h1afb2rf::::res://sprites/pointer.png<>res://Arm.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://CowboyAim2.gd<>uid://cg7waoccrfmok::::res://sounds/shot_sound.mp3<>res://Arm2.gd<>uid://dtm2e4v6xgfcn::::res://sounds/reload_sound.mp3<>uid://cnjf7scr3rcl0::::res://sounds/cowboy_hurt_sound.mp3<>uid://b0ptqq3oilpvu::::res://sounds/cowboy_death_sound.mp3<>uid://bjxl1p7gscah::::res://sounds/heart_sound.mp3<>uid://bjhle162nbs8c::::res://sounds/power_up_sound.mp3
 CowboyAim2.gd::GDScript::-1::1701771340::0::1::::<>RayCast2D<>::
 CowboyAim.gd::GDScript::-1::1701771340::0::1::::<>RayCast2D<>::
 default_bus_layout.tres::AudioBusLayout::6670984761359201687::1701987847::0::1::::<><>::
 Door.gd::GDScript::-1::1701892596::0::1::::<>AnimatableBody2D<>::
 door.tscn::PackedScene::6429285506800603518::1701975837::0::1::::<><>::res://Door.gd<>uid://biblslsrfa2o0
-elevator.tscn::PackedScene::1232247328008326502::1701999486::0::1::::<><>::uid://b3cj4tv57xgdm::::res://sprites/elevator.png<>uid://crdwvrso0c2wc::::res://sprites/elevator2.png<>res://Interruptor.gd<>uid://d352b8ptn2cxr::::res://sounds/interruptor_sound.mp3
+elevator.tscn::PackedScene::1232247328008326502::1701999486::0::1::::<><>::uid://b3cj4tv57xgdm
 heart.gd::GDScript::-1::1701886420::0::1::::<>Area2D<>::
 heart.tscn::PackedScene::7450452361258006436::1701975837::0::1::::<><>::uid://dbi1y2jvxvxoc
 icon.svg::CompressedTexture2D::6030231349834151962::1701202035::1701202035::1::::<><>::
 Interruptor.gd::GDScript::-1::1701999451::0::1::::<>AnimatableBody2D<>::
+intro_name.gd::GDScript::-1::1702058958::0::1::::<>Control<>::
+intro_name.tscn::PackedScene::4678952068922241804::1702060819::0::1::::<><>::res://intro_name.gd
 KickPowerUp.gd::GDScript::-1::1701889654::0::1::::<>Area2D<>::
 kick_power_up.tscn::PackedScene::2376512650299398095::1701975837::0::1::::<><>::res://KickPowerUp.gd<>uid://c7gihtetobist
-Level1.gd::GDScript::-1::1702000734::0::1::::<>Node2D<>::
-Level1.tscn::PackedScene::2803476893608795369::1702006927::0::1::::<><>::res://Level1.gd<>uid://i0emphslpxo3::::res://map/background_1.png<>uid://dtdfie583oufd::::res://cowboy.tscn<>uid://ob1fqnvga1mn::::res://zombie.tscn<>uid://dc0l3lkersyap::::res://map/Terrain (16x16).png<>uid://rs560cwqioqo::::res://elevator.tscn<>uid://defb4kk0rc8vw::::res://heart.tscn<>uid://84g20pqblilr::::res://kick_power_up.tscn<>uid://cxunnmjfp2hna::::res://door.tscn<>uid://cq0qgh6phjcmt::::res://camera.tscn<>uid://ci5262vg840ul::::res://meta.tscn
-level_2.gd::GDScript::-1::1702006919::0::1::::<>Node2D<>::
-level_2.tscn::PackedScene::1756614707298534741::1702006962::0::1::::<><>::uid://i0emphslpxo3::::res://map/background_1.png<>res://level_2.gd<>uid://dc0l3lkersyap::::res://map/Terrain (16x16).png<>uid://dtdfie583oufd::::res://cowboy.tscn<>uid://cq0qgh6phjcmt::::res://camera.tscn<>uid://ci5262vg840ul::::res://meta.tscn
-menu.gd::GDScript::-1::1702005043::0::1::::<>Control<>::
-menu.tscn::PackedScene::5419004995346048013::1702006926::0::1::::<><>::res://menu.gd<>uid://bj5j8egvejw1h::::res://map/background_0.png
+Level1.gd::GDScript::-1::1702060842::0::1::::<>Node2D<>::
+Level1.tscn::PackedScene::2803476893608795369::1702064678::0::1::::<><>::res://Level1.gd<>uid://i0emphslpxo3::::res://map/background_1.png<>uid://dtdfie583oufd::::res://cowboy.tscn<>uid://ob1fqnvga1mn::::res://zombie.tscn<>uid://dc0l3lkersyap::::res://map/Terrain (16x16).png<>uid://rs560cwqioqo::::res://elevator.tscn<>uid://defb4kk0rc8vw::::res://heart.tscn<>uid://84g20pqblilr::::res://kick_power_up.tscn<>uid://cxunnmjfp2hna::::res://door.tscn<>uid://cq0qgh6phjcmt::::res://camera.tscn<>uid://ci5262vg840ul::::res://meta.tscn
+level_2.gd::GDScript::-1::1702060279::0::1::::<>Node2D<>::
+level_2.tscn::PackedScene::1756614707298534741::1702064678::0::1::::<><>::uid://i0emphslpxo3::::res://map/background_1.png<>res://level_2.gd<>uid://dc0l3lkersyap::::res://map/Terrain (16x16).png<>uid://dtdfie583oufd::::res://cowboy.tscn<>uid://cq0qgh6phjcmt::::res://camera.tscn<>uid://ci5262vg840ul::::res://meta.tscn<>uid://rs560cwqioqo::::res://elevator.tscn<>uid://cxunnmjfp2hna::::res://door.tscn<>uid://ob1fqnvga1mn::::res://zombie.tscn<>uid://defb4kk0rc8vw::::res://heart.tscn<>uid://84g20pqblilr::::res://kick_power_up.tscn
+level_3.gd::GDScript::-1::1702060279::0::1::::<>Node2D<>::
+level_3.tscn::PackedScene::3249035054146507703::1702064679::0::1::::<><>::uid://i0emphslpxo3::::res://map/background_1.png<>res://level_3.gd<>uid://dc0l3lkersyap::::res://map/Terrain (16x16).png<>uid://cq0qgh6phjcmt::::res://camera.tscn<>uid://cxunnmjfp2hna::::res://door.tscn<>uid://rs560cwqioqo::::res://elevator.tscn<>uid://dtdfie583oufd::::res://cowboy.tscn<>uid://defb4kk0rc8vw::::res://heart.tscn<>uid://84g20pqblilr::::res://kick_power_up.tscn<>uid://ob1fqnvga1mn::::res://zombie.tscn<>uid://ci5262vg840ul::::res://meta.tscn
+menu.gd::GDScript::-1::1702064677::0::1::::<>Control<>::
+menu.tscn::PackedScene::5419004995346048013::1702064688::0::1::::<><>::res://menu.gd<>uid://bj5j8egvejw1h::::res://map/background_0.png
 Meta.gd::GDScript::-1::1701977013::0::1::::<>Area2D<>::
 meta.tscn::PackedScene::5397979618417228431::1701976264::0::1::::<><>::res://Meta.gd
-Zombie.gd::GDScript::-1::1701977786::0::1::::<>CharacterBody2D<>::
-zombie.tscn::PackedScene::986296620886217805::1701997393::0::1::::<><>::res://Zombie.gd<>uid://6syoiam5robq::::res://sprites/zombie.png<>res://ZombieAim.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://ZombieAim2.gd<>res://ZombieArm1.gd<>res://ZombieArm2.gd<>uid://bnkhsqsdvqp6i::::res://sounds/zombie_growl_sound.mp3<>uid://b7jjl1wha50am::::res://sounds/zombie_roar_sound.mp3
+you_lose.gd::GDScript::-1::1702052660::0::1::::<>Control<>::
+you_lose.tscn::PackedScene::610053996493930544::1702064679::0::1::::<><>::res://you_lose.gd
+you_win.gd::GDScript::-1::1702063772::0::1::::<>Control<>::
+you_win.tscn::PackedScene::6631670401196246414::1702064679::0::1::::<><>::res://you_win.gd
+Zombie.gd::GDScript::-1::1702059939::0::1::::<>CharacterBody2D<>::
+zombie.tscn::PackedScene::986296620886217805::1702050094::0::1::::<><>::res://Zombie.gd<>uid://6syoiam5robq::::res://sprites/zombie.png<>res://ZombieAim.gd<>uid://c2ai1qdqmibyh::::res://sounds/cowboy_footstep_sound.mp3<>res://ZombieAim2.gd<>res://ZombieArm1.gd<>res://ZombieArm2.gd<>uid://bnkhsqsdvqp6i::::res://sounds/zombie_growl_sound.mp3<>uid://b7jjl1wha50am::::res://sounds/zombie_roar_sound.mp3
 ZombieAim2.gd::GDScript::-1::1701202035::0::1::::<>RayCast2D<>::
 ZombieAim.gd::GDScript::-1::1701793236::0::1::::<>RayCast2D<>::
 ZombieArm1.gd::GDScript::-1::1701202035::0::1::::<>AnimatedSprite2D<>::
@@ -38,8 +46,9 @@ ZombieArm2.gd::GDScript::-1::1701202035::0::1::::<>AnimatedSprite2D<>::
 background_0.png::CompressedTexture2D::3080657213513041915::1702001846::1702001850::1::::<><>::
 background_1.png::CompressedTexture2D::613385289950715132::1702000332::1702000357::1::::<><>::
 Terrain (16x16).png::CompressedTexture2D::7351967664766720911::1701110601::1701772371::1::::<><>::
-::res://save/::1701992297
-settings.json::JSON::-1::1702005575::0::1::::<><>::
+::res://save/::1702056123
+score.json::JSON::-1::1702063281::0::1::::<><>::
+settings.json::JSON::-1::1702064680::0::1::::<><>::
 ::res://sounds/::1701890954
 cowboy_death_sound.mp3::AudioStreamMP3::4173290520795211442::1701286460::1701286498::1::::<><>::
 cowboy_footstep_sound.mp3::AudioStreamMP3::6668473157948070267::1701287156::1701287200::1::::<><>::

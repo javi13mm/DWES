@@ -12,8 +12,14 @@ Los controles no son cambiables en el juego. Son los siguientes:
       "kick" -> MouseRightButton
     "reload" -> R
 
-Para moverse por los menús y presionar botones: flechas del teclado y SpaceBar o Enter,
-respectivamente.
+Para moverse por los menús y presionar botones: flechas del teclado y SpaceBar o Enter, respectivamente.
+
+Resolución de pantalla:
+	Ancho del Viewport: 1500
+	Altura del Viewport: 750
+
+Filtro de texturas: "Nearest"
+Es posible que aún así, en ocasiones, aparezcan bordes de píxeles negros alrededor de los sprites del Cowboy y los Zombies.
 
 Recomendable: leer el apartado "TIPS", del menú principal antes de jugar.
 
@@ -24,5 +30,5 @@ El nickname se introduce antes de comenzar el nivel 1, luego el score se va actu
 al final de cada nivel, hasta terminar el juego y subir el mismo al API REST. Si mueres
 por el camino, no se subirá la puntuación.
 
-La puntuación es mayor si se juega en dificultad difícil (mayor velocidad y menor vida,
-de los enemigos).
+La puntuación es mayor si se juega en dificultad difícil (mayor velocidad y menor vida
+de los zombies).
