@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7wrwlpu6ulia"]
+
+[ext_resource type="Script" path="res://intro_name.gd" id="1_k7ugb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4811h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oc7px"]
+font_size = 30
+
+[node name="IntroName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k7ugb")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(745.5, 382.5)
+scale = Vector2(1563, 793)
+texture = SubResource("CanvasTexture_4811h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -699.0
+offset_top = -138.5
+offset_right = 699.0
+offset_bottom = -3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Introduce un nickname.
+Será tu nombre identificador en los scoreboards. Pulsa TAB para colocarte sobre el botón ENTER
+y presiónalo para establecer el nick introducido:"
+label_settings = SubResource("LabelSettings_oc7px")
+horizontal_alignment = 1
+
+[node name="EditNick" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.5
+offset_top = 8.0
+offset_right = 22.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Accept")
+focus_neighbor_right = NodePath("../Accept")
+placeholder_text = "Tu nickname..."
+alignment = 1
+max_length = 20
+
+[node name="Accept" type="Button" parent="."]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 386.0
+offset_right = 843.0
+offset_bottom = 417.0
+focus_neighbor_left = NodePath("../EditNick")
+focus_neighbor_right = NodePath("../EditNick")
+text = "ENTER"
+
+[connection signal="pressed" from="Accept" to="." method="_on_accept_pressed"]

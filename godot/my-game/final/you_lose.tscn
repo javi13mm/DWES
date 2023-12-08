@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://ixrrahs58ydc"]
+
+[ext_resource type="Script" path="res://you_lose.gd" id="1_8pr58"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_33876"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f0ydg"]
+font_size = 50
+font_color = Color(1, 0, 0, 1)
+
+[node name="YouLose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8pr58")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(745.5, 382.5)
+scale = Vector2(1563, 793)
+texture = SubResource("CanvasTexture_33876")
+
+[node name="LoseLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -13.0
+offset_right = 88.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_f0ydg")
+
+[node name="BackToMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -70.0
+offset_right = 64.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "BACK TO MENU"
+
+[connection signal="pressed" from="BackToMenu" to="." method="_on_back_to_menu_pressed"]

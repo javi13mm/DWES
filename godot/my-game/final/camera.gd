@@ -13,3 +13,4 @@ func _process(delta):
 	if get_parent():
 		var health = float(get_parent().find_child("Cowboy").health)
 		$HealthBar.modulate = Color((200 - health)/200, health/200, 0, 0.8)
+		get_parent().find_child("Background").global_position = get_screen_center_position() - Vector2(1520/2, 768/2)

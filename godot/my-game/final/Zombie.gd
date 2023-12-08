@@ -111,6 +111,7 @@ func kicked(power_up):
 		health -= 1
 	velocity.x = -SPEED * 1.5 * last_direction
 	if health < 1:
+		get_parent().score += 11
 		$DeathTimer.start()
 		$ZombieDeathSound.play()
 		$ZombieAim/ZombieArm1.hide()
@@ -128,6 +129,7 @@ func death():
 	$Blood.stop()
 	$Blood.play("blood")
 	if health < 1:
+		get_parent().score += 11
 		$DeathTimer.start()
 		$ZombieDeathSound.play()
 		$ZombieAim/ZombieArm1.hide()

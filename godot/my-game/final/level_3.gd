@@ -12,7 +12,12 @@ func _ready():
 	for hijo in get_children():
 		if hijo.name == "Elevator":
 			hijo.find_child("Interruptor").move_up = true
-			hijo.find_child("Interruptor").up_limit = 442
+			hijo.find_child("Interruptor").up_limit = 258
+			hijo.find_child("Interruptor").down_limit = hijo.position.y
+			hijo.find_child("Interruptor").speed = 5
+		elif hijo.name == "Elevator2":
+			hijo.find_child("Interruptor").move_up = true
+			hijo.find_child("Interruptor").up_limit = 250
 			hijo.find_child("Interruptor").down_limit = hijo.position.y
 			hijo.find_child("Interruptor").speed = 5
 		if difficulty == 1:
@@ -23,13 +28,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(score)
 	$Camera.position = $Cowboy.position
 	if find_child("Cowboy").dead and $DeathTimer.is_stopped():
 		$DeathTimer.start()
 	elif $Meta.finish_level:
 		save_score()
-		get_tree().change_scene_to_file("res://level_2.tscn")
+		get_tree().change_scene_to_file("res://you_win.tscn")
 
 
 func _on_death_timer_timeout():

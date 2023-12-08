@@ -147,6 +147,8 @@ func _on_body_animation_finished():
 
 func heart():
 	health += 100
+	if health > 200:
+		health = 200
 	$HeartSound.play()
 
 func kick_power():

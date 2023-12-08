@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjhahq7mv41dh"]
+[gd_scene load_steps=6 format=3 uid="uid://cjhahq7mv41dh"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_8tbcu"]
+[ext_resource type="Texture2D" uid="uid://bj5j8egvejw1h" path="res://map/background_0.png" id="2_dndj5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jdabu"]
 font_size = 28
 
 [sub_resource type="LabelSettings" id="LabelSettings_11ft5"]
 font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_cxhla"]
+font_size = 15
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -17,6 +21,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
 script = ExtResource("1_8tbcu")
+
+[node name="MenuBackground" type="Sprite2D" parent="."]
+texture = ExtResource("2_dndj5")
+centered = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -42,12 +50,17 @@ text = "PLAY"
 layout_mode = 2
 text = "OPTIONS"
 
+[node name="TipsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "TIPS"
+
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../PlayButton")
 text = "EXIT"
 
 [node name="Options" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,8 +114,7 @@ step = 1.0
 value = 10.0
 
 [node name="BackButton" type="Button" parent="Options"]
-layout_mode = 1
-anchors_preset = 7
+layout_mode = 2
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -118,6 +130,7 @@ focus_neighbor_bottom = NodePath("../OptionsGrid/DifficultyChosen")
 text = "BACK"
 
 [node name="DifficultyContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 offset_left = 937.0
 offset_top = 318.0
@@ -136,11 +149,66 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../NormalButton")
 text = "TRYHARD"
 
+[node name="Tips" type="Label" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -327.0
+offset_top = -215.0
+offset_right = 327.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TIPS:
+El objetivo del Cowboy es llegar a la meta de cada nivel. La meta siempre estará tras
+una puerta y no estará señalizada, debes explorar el mapa para encontrarla!
+
+El Cowboy recibe una puntuación al finalizar cada nivel, según:
+   - NÚMERO DE ZOMBIES ASESINADOS: pueden matarse a patadas o con balazos!
+   - VIDA RESTANTE: cuanta más vida tenga el Cowboy al llegar a la meta, más puntuación!
+
+Ten en cuenta que hay 2 tipos de Power-Ups escondidos por cada nivel:
+   - VIDA EXTRA (corazón rojo): aumenta la salud actual del Cowboy en 100 puntos, hasta
+      un máximo de 200!
+   - PATADA MORTAL (bota naranja): aumenta el daño de patada del Cowboy en un 1900%!!!
+      Disparar está muy visto para ti? Aplasta la cabeza de esos malnacidos a patadas!!
+
+IMPORTANTE: El Cowboy abre las puertas y activa los ascensores dándoles una patada, así
+siempre está preparado para disparar! Podríamos decir que no se anda con rodeos.
+
+P.D.: El Cowboy solo puede dar patadas si está en el suelo, y si no tiene la PATADA MORTAL,
+apenas hará daño a los Zombies con su patada. Aún así, esta es útil para empujar a los
+Zombies cercanos y sacárselos de encima, úsala!"
+label_settings = SubResource("LabelSettings_cxhla")
+
+[node name="BackButton2" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -46.0
+offset_right = 25.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_top = NodePath("../OptionsGrid/VolumeScrollBar")
+focus_neighbor_bottom = NodePath("../OptionsGrid/DifficultyChosen")
+text = "BACK"
+
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TipsButton" to="." method="_on_tips_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Options/OptionsGrid/DifficultyChosen" to="." method="_on_difficulty_chosen_pressed"]
 [connection signal="value_changed" from="Options/OptionsGrid/VolumeScrollBar" to="." method="_on_volume_scroll_bar_value_changed"]
 [connection signal="pressed" from="Options/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="DifficultyContainer/NormalButton" to="." method="_on_normal_button_pressed"]
 [connection signal="pressed" from="DifficultyContainer/TryhardButton" to="." method="_on_tryhard_button_pressed"]
+[connection signal="pressed" from="BackButton2" to="." method="_on_back_button_2_pressed"]

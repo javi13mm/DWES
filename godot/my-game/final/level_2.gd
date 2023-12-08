@@ -12,7 +12,7 @@ func _ready():
 	for hijo in get_children():
 		if hijo.name == "Elevator":
 			hijo.find_child("Interruptor").move_up = true
-			hijo.find_child("Interruptor").up_limit = 442
+			hijo.find_child("Interruptor").up_limit = 211
 			hijo.find_child("Interruptor").down_limit = hijo.position.y
 			hijo.find_child("Interruptor").speed = 5
 		if difficulty == 1:
@@ -23,13 +23,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(score)
 	$Camera.position = $Cowboy.position
 	if find_child("Cowboy").dead and $DeathTimer.is_stopped():
 		$DeathTimer.start()
 	elif $Meta.finish_level:
 		save_score()
-		get_tree().change_scene_to_file("res://level_2.tscn")
+		get_tree().change_scene_to_file("res://level_3.tscn")
 
 
 func _on_death_timer_timeout():
@@ -40,6 +39,7 @@ func save_score():
 	var file_content = FileAccess.get_file_as_string(score_dir)
 	var json = JSON.parse_string(file_content)
 	nick = json.name
+	
 	score += json.score
 	file.close()
 	
@@ -51,3 +51,4 @@ func save_score():
 	file = FileAccess.open(score_dir, 2)
 	file.store_line("{\"name\":\""+nick+"\",\"score\":"+str(score)+"}")
 	file.close()
+

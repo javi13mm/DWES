@@ -12,9 +12,12 @@ func _ready():
 	set_settings()
 	set_settings_file_data()
 	
+	$VBoxContainer.show()
 	$VBoxContainer/PlayButton.grab_focus()
 	$Options.hide()
 	$DifficultyContainer.hide()
+	$BackButton2.hide()
+	$Tips.hide()
 
 func read_initial_settings():
 	var file = FileAccess.open(file_dir, 1)
@@ -42,7 +45,7 @@ func _on_exit_button_pressed():
 
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Level1.tscn")
+	get_tree().change_scene_to_file("res://intro_name.tscn")
 
 
 func _on_options_button_pressed():
@@ -86,7 +89,7 @@ func _on_back_button_pressed():
 	$DifficultyContainer.hide()
 	$Options.hide()
 	$VBoxContainer.show()
-	$VBoxContainer/PlayButton.grab_focus()
+	$VBoxContainer/OptionsButton.grab_focus()
 
 
 func _on_volume_scroll_bar_value_changed(value):
@@ -98,3 +101,17 @@ func set_settings_file_data():
 	var file = FileAccess.open(file_dir, 2)
 	file.store_line("{\"difficulty\":"+str(difficulty)+",\"volume\":"+str(volume)+"}")
 	file.close()
+
+
+func _on_tips_button_pressed():
+	$VBoxContainer.hide()
+	$Tips.show()
+	$BackButton2.show()
+	$BackButton2.grab_focus()
+
+
+func _on_back_button_2_pressed():
+	$BackButton2.hide()
+	$Tips.hide()
+	$VBoxContainer.show()
+	$VBoxContainer/TipsButton.grab_focus()
