@@ -22,6 +22,7 @@ func _process(delta):
 				move_up = false
 				kick = false
 				get_parent().get_child(1).hide()
+				$Timer.start()
 			else:
 				get_parent().position.y = move_toward(get_parent().position.y, up_limit, speed)
 				position.y -= move_toward(position.y, up_limit, speed)
@@ -37,6 +38,12 @@ func _process(delta):
 				get_parent().get_child(1).show()
 
 func kicked():
+	$Timer.stop()
 	if not kick:
 		kick = true
 		$InterruptorSound.play()
+
+
+func _on_timer_timeout():
+	kick = true
+	$InterruptorSound.play()

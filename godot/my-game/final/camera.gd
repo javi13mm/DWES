@@ -13,4 +13,3 @@ func _process(delta):
 	if get_parent():
 		var health = float(get_parent().find_child("Cowboy").health)
 		$HealthBar.modulate = Color((200 - health)/200, health/200, 0, 0.8)
-		print($HealthBar.modulate)

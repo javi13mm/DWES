@@ -41,3 +41,9 @@ shape = SubResource("RectangleShape2D_bgpo1")
 [node name="InterruptorSound" type="AudioStreamPlayer2D" parent="Interruptor"]
 stream = ExtResource("4_ham1x")
 volume_db = 2.0
+
+[node name="Timer" type="Timer" parent="Interruptor"]
+wait_time = 7.0
+one_shot = true
+
+[connection signal="timeout" from="Interruptor/Timer" to="Interruptor" method="_on_timer_timeout"]

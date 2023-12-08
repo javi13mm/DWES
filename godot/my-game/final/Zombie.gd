@@ -14,7 +14,7 @@ var goto = Vector2(0,0)
 var reached_goto = false
 
 func _ready():
-	$ZombieRoarSound.pitch_scale = randf_range(0.9, 1.3)
+	$ZombieRoarSound.pitch_scale = randf_range(0.8, 1.4)
 	scale = Vector2(1.5,1.5)
 	SPEED *= abs(scale.x)
 	GRAVITY *= scale.y
@@ -28,9 +28,6 @@ func _physics_process(delta):
 		velocity.y += GRAVITY * delta
 
 	if not dead:
-		if not reached_goto and not $ZombieRoarSound.playing:
-			$ZombieRoarSound.play(1.0)
-		
 		var cowboy_relative_pos = 0
 		if get_parent().find_child("Cowboy"):
 			cowboy_relative_pos = get_parent().find_child("Cowboy").position - position
@@ -56,7 +53,9 @@ func _physics_process(delta):
 				detected_cowboy = false
 				direction = 0
 				reached_goto = true
-
+			if not reached_goto and not $ZombieRoarSound.playing:
+				$ZombieRoarSound.play(1.0)
+		
 		if detected_cowboy:
 			if is_on_floor():
 				velocity.x = move_toward(velocity.x, SPEED * direction, SPEED * delta)

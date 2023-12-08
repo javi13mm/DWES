@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci5262vg840ul"]
+
+[ext_resource type="Script" path="res://Meta.gd" id="1_8ixyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5rqf"]
+
+[node name="Meta" type="Area2D"]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_8ixyk")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_s5rqf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
